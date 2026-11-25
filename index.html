@@ -8,7 +8,7 @@
 <title>MOLINA · Elige tus colores y tu letra</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;500;600&family=Cinzel:wght@400;600&family=Cormorant+Garamond:wght@300;500;600&family=DM+Sans:wght@300;400;600&family=DM+Serif+Display&family=Inter:wght@300;400;500;600&family=Italiana&family=Josefin+Sans:wght@300;400;600&family=Jost:wght@300;400;500&family=Karla:wght@300;400;600&family=Manrope:wght@300;400;600&family=Marcellus&family=Montserrat:wght@300;400;600&family=Outfit:wght@300;400;600&family=Playfair+Display:wght@400;500;600&family=Raleway:wght@300;400;600&family=Syne:wght@500;700&family=Unbounded:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo+Narrow:wght@400;500&family=Barlow:wght@300;400;500&family=Big+Shoulders+Display:wght@700;800&family=Bodoni+Moda:wght@500;700&family=Figtree:wght@300;400;500&family=Fraunces:ital,wght@1,600&family=Inter:wght@300;400;500;600&family=Josefin+Sans:wght@300;400&family=Josefin+Slab:wght@600;700&family=Jost:wght@300;400;500&family=Karla:wght@300;400&family=Manrope:wght@300;400;600&family=Michroma&family=Mrs+Saint+Delafield&family=Poiret+One&family=Raleway:wght@300;400&family=Space+Grotesk:wght@300;400;500&family=Space+Mono:wght@400;700&family=Tenor+Sans&display=swap" rel="stylesheet">
 <style>
   :root{
     --ui-bg:#F4F4F1; --ui-card:#FFFFFF; --ui-tx:#141514; --ui-mu:#6B6F6B; --ui-ln:#E2E3DF;
@@ -58,7 +58,7 @@
   /* Vista previa (color y tipo) */
   .pv{background:var(--bg);color:var(--tx);padding:30px 22px 22px;min-height:250px;display:flex;flex-direction:column;justify-content:space-between;gap:22px}
   .pv-top{text-align:center}
-  .mark{font-family:var(--dfam);font-weight:var(--dw);letter-spacing:var(--dtr);font-style:var(--dst,normal);font-size:var(--dsz,34px);line-height:1;text-transform:uppercase;padding-left:var(--dtr)}
+  .mark{font-family:var(--dfam);font-weight:var(--dw);letter-spacing:var(--dtr);font-style:var(--dst);font-size:var(--dsz,34px);line-height:1.05;text-transform:var(--dcs);padding-left:max(0px,var(--dtr));white-space:nowrap}
   .sub{font-family:var(--bfam);font-weight:var(--bw);font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--mu);margin-top:12px}
   .menu{font-family:var(--bfam);font-weight:var(--bw);font-size:14px}
   .menu .row{display:flex;justify-content:space-between;gap:10px;padding:9px 0;border-top:1px solid var(--ln)}
@@ -75,6 +75,8 @@
 
   .specimen{font-family:var(--bfam);font-size:13px;color:var(--mu);text-align:center;margin-top:-6px}
   .fonts{font-size:13px;color:var(--ui-mu);margin-top:6px}
+  .cat{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--ui-tx);border-radius:6px;padding:3px 8px;margin-bottom:8px}
+  .insp{font-size:13px;color:var(--ui-tx);margin-top:8px;padding:8px 10px;background:var(--ui-bg);border-radius:8px}
   .fonts b{color:var(--ui-tx);font-weight:600}
 
   /* Combinación final */
@@ -84,18 +86,18 @@
   .post{background:var(--bg);color:var(--tx);aspect-ratio:4/5;display:flex;flex-direction:column;justify-content:space-between;padding:28px 24px}
   .post .top{display:flex;justify-content:space-between;font-family:var(--bfam);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--mu)}
   .post .mid{text-align:center}
-  .post .mark{--dsz:clamp(38px,11vw,56px)}
+  .post .mark{font-size:calc(var(--dsz) * 1.3)}
   .post .line{width:46px;height:2px;background:var(--ac2);margin:22px auto}
   .post .claim{font-family:var(--bfam);font-weight:var(--bw);font-size:15px;letter-spacing:.06em}
   .post .foot{display:flex;justify-content:center;gap:18px;font-family:var(--bfam);font-size:12px;letter-spacing:.2em;text-transform:uppercase}
   .post .foot span{border:1px solid var(--ln);padding:8px 12px;border-radius:99px}
   .carta{background:var(--su);color:var(--tx);padding:28px 24px}
-  .carta h4{font-family:var(--dfam);font-weight:var(--dw);letter-spacing:var(--dtr);text-transform:uppercase;font-size:22px;text-align:center}
+  .carta h4{font-family:var(--dfam);font-weight:var(--dw);letter-spacing:var(--dtr);font-style:var(--dst);text-transform:var(--dcs);font-size:var(--hsz,22px);text-align:center;line-height:1.1}
   .carta .s{font-family:var(--bfam);text-align:center;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--mu);margin:8px 0 20px}
   .carta .menu{font-size:15px}
   .carta .extra{font-family:var(--bfam);font-size:13px;color:var(--mu);margin-top:16px;text-align:center}
   .perfil{background:var(--ui-card);padding:20px;display:flex;gap:16px;align-items:center}
-  .avatar{flex:0 0 76px;height:76px;border-radius:50%;background:var(--bg);color:var(--tx);display:grid;place-items:center;font-family:var(--dfam);font-weight:var(--dw);font-size:34px;border:3px solid var(--ac2)}
+  .avatar{flex:0 0 76px;height:76px;border-radius:50%;background:var(--bg);color:var(--tx);display:grid;place-items:center;font-family:var(--dfam);font-weight:var(--dw);font-style:var(--dst);font-size:var(--asz,34px);border:3px solid var(--ac2)}
   .perfil .h{font-weight:600}
   .perfil .b{font-size:13px;color:var(--ui-mu)}
   .perfil .bio{font-size:14px;margin-top:4px}
@@ -153,7 +155,7 @@
     <div class="sec-head">
       <div class="kicker">Paso 2 de 3</div>
       <h2>Tipografías</h2>
-      <p>Cada sistema tiene dos letras: una para el nombre <b>MOLINA</b> y otra para los textos, precios y publicaciones.</p>
+      <p>Diez estilos de letra muy distintos entre sí, de lo más clásico a lo más moderno, y cada uno con una marca de referencia que usa algo parecido. Cada sistema tiene dos letras: una para el nombre <b>Molina</b> y otra para los textos y precios.</p>
     </div>
     <div class="grid" id="gridType"></div>
   </section>
@@ -239,32 +241,33 @@ const COLORS = [
     r:{bg:'#000000',su:'#111111',tx:'#FFFFFF',mu:'#8A8A8A',ac:'#1C1C1C',on:'#FFFFFF',ac2:'#2E8A64',ln:'#262626'} },
 ];
 
-/* Tipografías (todas de Google Fonts, gratuitas). d = nombre MOLINA · b = textos */
+/* Tipografías: 10 familias de estilos distintos (todas gratuitas en Google Fonts).
+   d = nombre MOLINA (f familia · w peso · tr espaciado · sz tamaño · cs mayúsc./minúsc. · st estilo) · b = textos */
 const TYPES = [
-  { id:1, name:'Editorial de lujo', d:{f:"'Bodoni Moda'",w:500,tr:'.18em',sz:'34px'}, b:{f:'Inter',w:400},
-    desc:'Letra de revista de moda: trazos finos y gruesos muy marcados. Lujo y moda, para hombre y mujer.', tags:['Lujo','Moda','Contraste'] },
-  { id:2, name:'Lujo silencioso', d:{f:"'Cormorant Garamond'",w:500,tr:'.24em',sz:'36px'}, b:{f:'Montserrat',w:300},
-    desc:'Serif delicada con mucho aire entre letras y un texto limpio. Elegante sin gritar.', tags:['Elegante','Suave','Aireada'] },
-  { id:3, name:'Romana imponente', d:{f:'Cinzel',w:600,tr:'.16em',sz:'32px'}, b:{f:'Raleway',w:400},
-    desc:'Mayúsculas romanas, como las de tus referencias (Calsau, Versace), con un texto moderno.', tags:['Imponente','Clásica','Firme'] },
-  { id:4, name:'Elegancia contemporánea', d:{f:"'Playfair Display'",w:500,tr:'.14em',sz:'34px'}, b:{f:'Manrope',w:400},
-    desc:'Serif con mucha personalidad y una sans redonda y amable. Con clase pero cercana.', tags:['Con clase','Cercana','Equilibrada'] },
-  { id:5, name:'Clásico suave', d:{f:'Marcellus',w:400,tr:'.22em',sz:'33px'}, b:{f:'Jost',w:400},
-    desc:'Letra de inspiración romana pero de trazo parejo y suave. Muy unisex y fácil de leer.', tags:['Unisex','Suave','Atemporal'] },
-  { id:6, name:'Contraste moderno', d:{f:"'DM Serif Display'",w:400,tr:'.1em',sz:'36px'}, b:{f:"'DM Sans'",w:400},
-    desc:'Serif gruesa y moderna con una sans de la misma familia. Se ve sólida y actual.', tags:['Sólida','Actual','Legible'] },
-  { id:7, name:'Fina y alta', d:{f:'Italiana',w:400,tr:'.26em',sz:'38px'}, b:{f:'Karla',w:400},
-    desc:'Letras finas y altas, muy estilizadas. Es la más delicada: lleva la marca hacia el salón de belleza.', tags:['Delicada','Estilizada','Salón'] },
-  { id:8, name:'Geométrica art déco', d:{f:"'Josefin Sans'",w:300,tr:'.38em',sz:'32px'}, b:{f:"'Josefin Sans'",w:400},
-    desc:'Formas geométricas y mucho espacio entre letras, con aire de los años 20 pero minimalista.', tags:['Geométrica','Minimal','Espaciada'] },
-  { id:9, name:'Creativa', d:{f:'Syne',w:700,tr:'.05em',sz:'38px'}, b:{f:'Inter',w:400},
-    desc:'Letra moderna con formas poco comunes. Transmite lo «creativo» y lo «feliz» que pediste.', tags:['Creativa','Moderna','Diferente'] },
-  { id:10, name:'Contundente', d:{f:'Unbounded',w:600,tr:'.06em',sz:'30px'}, b:{f:'Outfit',w:400},
-    desc:'Letra ancha y redonda, muy fuerte. Imponente y moderna, con estilo urbano limpio.', tags:['Fuerte','Ancha','Urbana'] },
+  { id:1, cat:'Didona de moda', name:'Revista de moda', d:{f:"'Bodoni Moda'",w:700,tr:'.02em',sz:'44px',cs:'uppercase'}, b:{f:'Manrope',w:400},
+    insp:'Vogue, Dior, Harper’s Bazaar', desc:'Letra de portada de revista: trazos gruesos y finísimos, compacta y poderosa. Grita lujo sin hacer ruido.', tags:['Lujo','Moda','Impacto'] },
+  { id:2, cat:'Extendida', name:'Ancha y técnica', d:{f:'Michroma',w:400,tr:'.14em',sz:'28px',cs:'uppercase'}, b:{f:'Barlow',w:400},
+    insp:'Audi y el mundo automotriz de alta gama', desc:'Letras muy anchas y geométricas, como de tablero de carro alemán. Moderna, precisa e imponente.', tags:['Moderna','Precisa','Automotriz'] },
+  { id:3, cat:'Condensada', name:'Alta y estrecha', d:{f:"'Big Shoulders Display'",w:800,tr:'.04em',sz:'64px',cs:'uppercase'}, b:{f:"'Archivo Narrow'",w:400},
+    insp:'Carteles deportivos y streetwear de lujo', desc:'Letras altas, apretadas y muy gruesas. Ocupa poco espacio y pega fuerte; se ve muy bien en fachada y en redes.', tags:['Fuerte','Urbana','Deportiva'] },
+  { id:4, cat:'Grotesca negra', name:'Bloque minimalista', d:{f:"'Archivo Black'",w:400,tr:'-.02em',sz:'46px',cs:'uppercase'}, b:{f:"'Space Grotesk'",w:400},
+    insp:'Celine, Balenciaga, Saint Laurent', desc:'Palo seco negrísimo y apretado, sin adornos. Es como lo hacen hoy las grandes casas de moda: lujo minimalista y directo.', tags:['Minimal','Contundente','Actual'] },
+  { id:5, cat:'Caligráfica', name:'Firma a mano', d:{f:"'Mrs Saint Delafield'",w:400,tr:'0',sz:'76px',cs:'none'}, b:{f:"'Tenor Sans'",w:400},
+    insp:'Cartier y las firmas de diseñador', desc:'El nombre como tu firma personal. Muy elegante y cercana; acompañada de una letra limpia para equilibrar entre hombre y mujer.', tags:['Personal','Elegante','Firma'] },
+  { id:6, cat:'Monoespaciada', name:'Máquina de escribir', d:{f:"'Space Mono'",w:700,tr:'.02em',sz:'46px',cs:'lowercase'}, b:{f:"'Space Mono'",w:400},
+    insp:'Le Labo, perfumerías de autor', desc:'Todas las letras ocupan lo mismo, como en una máquina de escribir. Creativa, de autor, con aire de laboratorio o estudio.', tags:['Creativa','De autor','Diferente'] },
+  { id:7, cat:'Egipcia (slab)', name:'Serifa cuadrada', d:{f:"'Josefin Slab'",w:700,tr:'.12em',sz:'40px',cs:'uppercase'}, b:{f:"'Josefin Sans'",w:400},
+    insp:'Hermès', desc:'Remates rectos y cuadrados en vez de puntas. Sólida, artesanal y con mucha personalidad, sin parecer antigua.', tags:['Artesanal','Sólida','Única'] },
+  { id:8, cat:'Serif suave', name:'Cursiva cálida', d:{f:'Fraunces',w:600,tr:'-.01em',sz:'56px',cs:'lowercase',st:'italic'}, b:{f:'Figtree',w:400},
+    insp:'Marcas de belleza y cafés de especialidad actuales', desc:'Cursiva gruesa, redondeada y alegre, en minúsculas. Feliz, creativa y cercana; la más amable para hombre y mujer.', tags:['Feliz','Creativa','Cercana'] },
+  { id:9, cat:'Art déco', name:'Línea fina déco', d:{f:"'Poiret One'",w:400,tr:'.3em',sz:'36px',cs:'uppercase'}, b:{f:'Raleway',w:300},
+    insp:'Hoteles y salones de los años 20, estilo Gran Gatsby', desc:'Trazo de una sola línea finita con formas geométricas. Glamour, fiesta y lujo de noche: muy de salón de belleza.', tags:['Glamour','Delicada','Noche'] },
+  { id:10, cat:'Geométrica pura', name:'Círculo y triángulo', d:{f:'Jost',w:500,tr:'.3em',sz:'34px',cs:'uppercase'}, b:{f:'Karla',w:400},
+    insp:'Louis Vuitton (Futura)', desc:'Hecha con círculos y triángulos perfectos: la O es redonda y la M en punta. Clásica del lujo moderno, limpia y atemporal.', tags:['Atemporal','Limpia','Lujo moderno'] },
 ];
 
 const DEF_COLOR = {r:{bg:'#FAFAF8',su:'#F1F2EF',tx:'#141514',mu:'#6B6F6B',ac:'#24483A',on:'#FFFFFF',ac2:'#24483A',ln:'#E2E3DF'}};
-const DEF_TYPE  = {d:{f:'Jost',w:300,tr:'.32em',sz:'32px'}, b:{f:'Inter',w:400}};
+const DEF_TYPE  = {d:{f:'Jost',w:300,tr:'.32em',sz:'32px',cs:'uppercase'}, b:{f:'Inter',w:400}};
 
 const KEY='molina-eleccion-v1';
 let state = {c:null, t:null};
@@ -278,7 +281,8 @@ const getT = () => TYPES.find(x=>x.id===state.t);
 function vars(c, t){
   const r=(c||DEF_COLOR).r, d=(t||DEF_TYPE).d, b=(t||DEF_TYPE).b;
   return `--bg:${r.bg};--su:${r.su};--tx:${r.tx};--mu:${r.mu};--ac:${r.ac};--on:${r.on};--ac2:${r.ac2};--ln:${r.ln};`+
-         `--dfam:${d.f},serif;--dw:${d.w};--dtr:${d.tr};--dsz:${d.sz};--bfam:${b.f},sans-serif;--bw:${b.w};`;
+         `--dfam:${d.f},serif;--dw:${d.w};--dtr:${d.tr};--dsz:${d.sz};--dcs:${d.cs};--dst:${d.st||'normal'};`+
+         `--hsz:${d.cs==='none'?'40px':(d.f==='Michroma'?'16px':'22px')};--asz:${d.cs==='none'?'46px':'34px'};--bfam:${b.f},sans-serif;--bw:${b.w};`;
 }
 const menuHTML = () => `
   <div class="menu">
@@ -322,8 +326,10 @@ function renderTypes(){
       </div>
       <div class="meta">
         <div class="num">TIPOGRAFÍA ${pad(t.id)}</div>
+        <span class="cat">${t.cat}</span>
         <h3>${t.name}</h3>
         <p class="desc">${t.desc}</p>
+        <p class="insp">Estilo parecido a: <b>${t.insp}</b></p>
         <p class="fonts">Nombre: <b>${t.d.f.replace(/'/g,'')}</b> · Textos: <b>${t.b.f.replace(/'/g,'')}</b></p>
         <div class="tags">${t.tags.map(m=>`<span>${m}</span>`).join('')}</div>
         <button class="pick" type="button">${state.t===t.id?'✓ Elegida':'Elegir esta tipografía'}</button>
